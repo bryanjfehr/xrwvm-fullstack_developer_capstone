@@ -4,7 +4,7 @@ img{
 }
 
 .card{
-  border: rgb(103, 102, 105) 3px solid;
+  border: rgb(51, 0, 154) 10px solid;
   display: flex;  
   flex-direction: column;
   margin-left:5%;
@@ -28,13 +28,13 @@ img{
 }
 .details{
   font-size: 20px;
-  color: rgb(97, 64, 128);
+  color: rgb(128, 94, 64);
   padding:20px;
 }
 
 .title{
   font-size: 20px;
-  background-color: rgb(97, 64, 128);
+  background-color: rgba(247, 115, 0, 0.941);
   color: white;
   text-align: center;
   margin:20px;
