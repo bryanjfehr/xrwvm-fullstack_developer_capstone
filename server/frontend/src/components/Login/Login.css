@@ -1,11 +1,11 @@
 .navcontainer{
   display: flex;
   flex: 1;
-
+  color: white;
   flex-direction: row;
   margin: auto;
   margin-top: 2%;
-  background-color: rgb(97, 64, 128);
+  background-color: rgb(14, 14, 14);
   align-items: flex-start;
 }
 
