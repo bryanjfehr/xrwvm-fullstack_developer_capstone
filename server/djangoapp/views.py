@@ -1,12 +1,9 @@
 import json
 import logging
-from datetime import datetime
 
-from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import CarMake, CarModel
@@ -45,7 +42,6 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-    context = {}
     data = json.loads(request.body)
     username = data["userName"]
     password = data["password"]
@@ -53,7 +49,6 @@ def registration(request):
     last_name = data["lastName"]
     email = data["email"]
     username_exist = False
-    email_exist = False
     try:
         # Check if user already exists
         User.objects.get(username=username)
@@ -138,7 +133,7 @@ def get_dealer_reviews(request, dealer_id):
 
 
 def add_review(request):
-    if request.user.is_anonymous == False:
+    if request.user.is_anonymous is False:
         data = json.loads(request.body)
         try:
             response = post_review(data)
