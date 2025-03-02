@@ -17,9 +17,6 @@ from .restapis import get_request, analyze_review_sentiments, post_review
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
-
-# Create your views here.
-
 # Create a `login_request` view to handle sign in request
 @csrf_exempt
 def login_user(request):
@@ -46,7 +43,6 @@ def logout_request(request):
 @csrf_exempt
 def registration(request):
     context = {}
-
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
